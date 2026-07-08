@@ -109,7 +109,8 @@ build/Release/MintAssistant.exe
 
 ## Screenshots
 
-*Coming soon.*
+<img width="979" height="650" alt="image" src="https://github.com/user-attachments/assets/b5e956ef-4446-4119-b176-948d9e898f66" />
+<img width="978" height="647" alt="image" src="https://github.com/user-attachments/assets/f77259be-f824-4f3a-b413-f0ff036446e2" />
 
 ---
 
