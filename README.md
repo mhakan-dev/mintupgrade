@@ -114,6 +114,14 @@ build/Release/MintAssistant.exe
 
 ---
 
+## AI Disclosure
+
+AI tools were used to assist with development, including code optimization, documentation, and translations.
+
+All generated output was reviewed, modified where necessary, tested, and verified by the author before being included in the project.
+
+---
+
 ## License
 
 This project is licensed under the GNU General Public License v3.0 (GPLv3).
