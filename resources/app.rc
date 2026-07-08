@@ -1,0 +1,37 @@
+// ============================================================================
+//  app.rc - Surum bilgisi ve (istege bagli) uygulama simgesi
+//
+//  SIMGE EKLEMEK ICIN:
+//   1) Bu klasore "mint.ico" adinda bir simge dosyasi koyun.
+//      Mint logosunu resmi siteden edinebilirsiniz: https://www.linuxmint.com
+//      (PNG'yi .ico'ya cevirmek gerekir; 256/48/32/16 px katmanli olmasi idealdir.)
+//   2) Asagidaki satirin basindaki "//" isaretini kaldirin.
+// ============================================================================
+#include <windows.h>
+#include "resource.h"
+
+IDI_APP  ICON   "mint.ico"
+IDR_LOGO RCDATA "logo.png"
+
+1 VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "041f04b0"
+    BEGIN
+      VALUE "FileDescription",  "Linux Mint Yukseltme Yardimcisi"
+      VALUE "ProductName",      "Mint Upgrade Assistant"
+      VALUE "FileVersion",      "1.0.0.0"
+      VALUE "ProductVersion",   "1.0.0.0"
+      VALUE "OriginalFilename", "MintAssistant.exe"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x41f, 1200
+  END
+END
