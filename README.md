@@ -88,9 +88,9 @@ build/Release/MintAssistant.exe
 ## How it Works
 
 1. Analyze the system hardware.
-2. Scan installed Windows applications.
-3. Recommend the most suitable Linux Mint edition.
-4. Download the latest official Linux Mint ISO.
+2. Recommend the most suitable Linux Mint edition.
+3. Download the latest official Linux Mint ISO.
+4. Scan installed Windows applications.
 5. Verify the ISO integrity.
 6. Configure a temporary UEFI boot entry.
 7. Reboot directly into the Linux Mint installer.
