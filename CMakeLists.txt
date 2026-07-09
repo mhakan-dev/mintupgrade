@@ -1,12 +1,12 @@
 # ============================================================================
-#  MintUpgradeAssistant — CMake derleme tanımı
-#  Visual Studio 2022: "Open a local folder" ile bu klasörü açmanız yeterli.
+#  MintUpgradeAssistant — CMake build definition
+# Visual Studio 2022: Simply open this folder using "Open a local folder".
 # ============================================================================
 cmake_minimum_required(VERSION 3.20)
 project(MintUpgradeAssistant LANGUAGES CXX)
 
-# CRT statik bağlanır (/MT, /MTd): başka bilgisayarda vcruntime140*.dll,
-# msvcp140*.dll gibi VC++ Runtime DLL'leri GEREKMEZ — exe tek başına çalışır.
+# CRT is statically linked (/MT, /MTd): VC++ Runtime DLLs such as vcruntime140*.dll
+# and msvcp140*.dll are NOT required on other computers — the exe runs standalone.
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 if(WIN32)
@@ -40,15 +40,11 @@ target_compile_definitions(MintAssistant PRIVATE
     UNICODE _UNICODE _WIN32_WINNT=0x0A00 NOMINMAX)
 
 if(MSVC)
-    # Kaynaklar UTF-8 (Türkçe metinler için /utf-8 şart)
+    # Sources: UTF-8 (UTF-8 is mandatory for Turkish texts)
     target_compile_options(MintAssistant PRIVATE /utf-8 /W3 /EHsc)
-    # bcdedit + mountvol + ESP erişimi için uygulama YÖNETİCİ olarak başlamalı
     set_target_properties(MintAssistant PROPERTIES
         LINK_FLAGS "/MANIFESTUAC:\"level='requireAdministrator' uiAccess='false'\"")
 endif()
 
 target_link_libraries(MintAssistant PRIVATE
     user32 gdi32 gdiplus shlwapi shell32 advapi32 winhttp virtdisk bcrypt)
-
-# NOT: Logo (logo.png) ve simge (mint.ico) app.rc üzerinden EXE İÇİNE gömülür.
-# Exe tek başına taşınabilir; yanında resources klasörü GEREKMEZ.
